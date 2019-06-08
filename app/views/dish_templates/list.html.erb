@@ -1,0 +1,74 @@
+<h1>
+  Dish list
+</h1>
+
+<a href="/new_dish_form">
+  Add a new dish
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Cuisine
+    </th>
+
+    <th>
+      Restaurant
+    </th>
+    
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @dishes.each do |dish| %>
+  <tr>
+    <td>
+      <%= dish.id %>
+    </td>
+
+    <td>
+      <%= dish.name %>
+    </td>
+
+    <td>
+      <%= dish.cuisine_id %>
+    </td>
+
+    <td>
+      <%= dish.restaurant %>
+    </td>
+    
+    <td>
+      <%= time_ago_in_words(dish.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(dish.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/dishes/<%= dish.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,54 @@
+<h1>
+  Dish #<%= @dish.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/dishes">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_dish_form/<%= @dish.id %>">
+      Edit dish
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_dish/<%= @dish.id %>">
+      Delete dish
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @dish.name %>
+  </dd>
+
+  <dt>
+    Cuisine
+  </dt>
+  <dd>
+    <%= @dish.cuisine_id %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@dish.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@dish.updated_at) %> ago
+  </dd>
+</dl>
+

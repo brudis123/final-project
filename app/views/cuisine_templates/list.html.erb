@@ -1,0 +1,58 @@
+<h1>
+  Cuisine list
+</h1>
+
+<a href="/new_cuisine_form">
+  Add a new cuisine
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Name
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @cuisines.each do |cuisine| %>
+  <tr>
+    <td>
+      <%= cuisine.id %>
+    </td>
+
+    <td>
+      <%= cuisine.name %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(cuisine.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(cuisine.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/cuisines/<%= cuisine.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

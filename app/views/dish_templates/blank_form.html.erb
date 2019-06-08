@@ -1,0 +1,43 @@
+<h1>
+  Add a new dish
+</h1>
+
+<hr>
+
+<%= render("dish_templates/validation_failures.html.erb") %>
+
+<form action="/insert_dish_record" method="post">
+  <div>
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" value="<%= @dish.name %>">
+  </div>
+
+  <div>
+    <label for="cuisine_id">
+      Cuisine
+    </label>
+
+    <input type="text" id="cuisine_id" name="cuisine_id" value="<%= @dish.cuisine_id %>">
+  </div>
+
+  <div>
+    <label for="restaurant">
+      Restaurant
+    </label>
+
+    <input type="text" id="restaurant" name="restaurant" value="<%= @dish.restaurant %>">
+  </div>
+  
+  <button>
+    Create dish
+  </button>
+</form>
+
+<hr>
+
+<a href="/dishes">
+  Go back
+</a>

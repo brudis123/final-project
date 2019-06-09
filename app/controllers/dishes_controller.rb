@@ -22,7 +22,7 @@ class DishesController < ApplicationController
 
     @dish.name = params.fetch("name")
     @dish.cuisine_id = params.fetch("cuisine_id")
-    @dish.restaurant = params.fetch("restaurant")
+    @dish.restaurant = params.fetch("restaurant_id")
 
     if @dish.valid?
       @dish.save
@@ -44,7 +44,7 @@ class DishesController < ApplicationController
 
     @dish.name = params.fetch("name")
     @dish.cuisine_id = params.fetch("cuisine_id")
-    @dish.restaurant = params.fetch("restaurant")
+    @dish.restaurant = params.fetch("restaurant_id")
 
     if @dish.valid?
       @dish.save

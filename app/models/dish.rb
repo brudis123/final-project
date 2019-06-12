@@ -9,6 +9,8 @@
 #  updated_at    :datetime         not null
 #  restaurant_id :integer
 #  photo         :string
+#  comment_id    :integer
+#  user_id       :integer
 #
 
 class Dish < ApplicationRecord

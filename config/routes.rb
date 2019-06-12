@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Comment resource:
+
+  # CREATE
+  match("/new_comment_form", { :controller => "comments", :action => "blank_form", :via => "get" })
+  match("/insert_comment_record", { :controller => "comments", :action => "save_new_info", :via => "post" })
+
+  # READ
+  match("/comments", { :controller => "comments", :action => "list", :via => "get" })
+  match("/comments/:id_to_display", { :controller => "comments", :action => "details", :via => "get" })
+
+  # UPDATE
+  match("/existing_comment_form/:id_to_prefill", { :controller => "comments", :action => "prefilled_form", :via => "get" })
+  match("/update_comment_record/:id_to_modify", { :controller => "comments", :action => "save_edits", :via => "post" })
+
+  # DELETE
+  match("/delete_comment/:id_to_remove", { :controller => "comments", :action => "remove_row", :via => "get" })
+
+  #------------------------------
+
   # Routes for the Address resource:
 
   # CREATE

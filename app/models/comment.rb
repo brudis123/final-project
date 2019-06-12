@@ -1,13 +1,15 @@
 # == Schema Information
 #
-# Table name: addresses
+# Table name: comments
 #
 #  id         :integer          not null, primary key
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  name       :string
+#  user_id    :integer
+#  dish_id    :integer
+#  body       :text
 #
 
-class Address < ApplicationRecord
-  has_one :restaurant, :dependent => :destroy
+class Comment < ApplicationRecord
+  has_one :dish, :dependent => :destroy
 end

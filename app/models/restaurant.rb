@@ -12,7 +12,7 @@
 class Restaurant < ApplicationRecord
     
     #belongs_to :dish, :class_name => "Restaurant", :foreign_key => "restaurant_id"
-    has_many :dishes, :dependent => :destroy
+    #has_many :dishes, :dependent => :destroy
     belongs_to :address
-
+    has_many(:dishes, { :class_name => "Dish", :foreign_key => "restaurant_id" })
 end

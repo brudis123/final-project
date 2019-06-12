@@ -1,0 +1,19 @@
+<h1>
+  Edit comment #<%= @comment.id %>
+</h1>
+
+<hr>
+
+<%= render("comment_templates/validation_failures.html.erb") %>
+
+<form action="/update_comment_record/<%= @comment.id %>" method="post">
+  <button>
+    Update comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/comments">
+  Go back
+</a>

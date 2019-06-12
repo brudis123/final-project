@@ -1,5 +1,5 @@
 <h1>
-  Add a new dish
+  Add a Favorite Dish
 </h1>
 
 <hr>
@@ -21,29 +21,44 @@
   </label>
 
 
-<select name="cuisine" id="cuisine_dropdown">
-  <option>American</option>
-  <option>Chinese</option>
-  <option>French</option>
-  <option>Fusion</option>
-  <option>Indian</option>
-  <option>Italian</option>
-  <option>Japanese</option>
-  <option>Mexican</option>
-  <option>Spanish</option>
-  <option>Steak</option>
-  <option>Thai</option>
-  <option>Other</option>
+<select name="cuisine_id" id="cuisine_dropdown">
+    <% Cuisine.all.each do |cuisine| %>
+      <option value="<%= cuisine.id %>">
+        <%= cuisine.name %>
+       
+      </option>
+    <% end %>
+    
 </select>
 
 </div> 
-  <div>
+
+<div class="row">
+  <div class="column">
     <label for="restaurant">
       Restaurant
     </label>
-
     <input type="text" id="restaurant" name="restaurant" value="<%= @dish.restaurant %>">
   </div>
+  <div class="column">
+<label for="restaurant">
+      Address
+    </label>
+    <!--<input type="text" id="address" name="address" value="<%#= @restaurant.address %>">-->
+  </div>
+</div>
+
+  <!--<div>-->
+    <!--<label for="restaurant">-->
+      <!--Restaurant-->
+    <!--</label>-->
+    <!--<input type="text" id="restaurant" name="restaurant" value="<%= @dish.restaurant %>">-->
+  <!--</div>-->
+
+
+
+  <label for="comment_box">Taste Notes</label>
+  <textarea id="comment_box" name="dish_comment" placeholder="Enter your thoughts on the food..."></textarea>
   
 <!--<form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">-->
   <label>Photo</label>   

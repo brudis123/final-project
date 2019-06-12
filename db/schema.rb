@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190611222524) do
+ActiveRecord::Schema.define(version: 20190612183520) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(version: 20190611222524) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "dish_id"
+    t.text "body"
+  end
+
   create_table "cuisines", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -62,6 +70,8 @@ ActiveRecord::Schema.define(version: 20190611222524) do
     t.datetime "updated_at", null: false
     t.integer "restaurant_id"
     t.string "photo"
+    t.integer "comment_id"
+    t.integer "user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

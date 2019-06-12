@@ -1,0 +1,19 @@
+<h1>
+  Add a new comment
+</h1>
+
+<hr>
+
+<%= render("comment_templates/validation_failures.html.erb") %>
+
+<form action="/insert_comment_record" method="post">
+  <button>
+    Create comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/comments">
+  Go back
+</a>

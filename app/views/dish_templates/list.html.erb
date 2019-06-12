@@ -27,6 +27,10 @@
     </th>
     
     <th>
+      Photo
+    </th>
+    
+    <th>
       Created at
     </th>
 
@@ -49,11 +53,18 @@
     </td>
 
     <td>
-      <%= dish.cuisine_id %>
+      <%= dish.cuisine %>
     </td>
 
+    
+    <%# restaurant = Restaurant.where({:restaurant_id => @restaurant_id }) %>
+    
     <td>
       <%= dish.restaurant %>
+    </td>
+    
+    <td>
+      <img src="<%= dish.photo %>" class="img-responsive">
     </td>
     
     <td>

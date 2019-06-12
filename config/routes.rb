@@ -1,4 +1,42 @@
 Rails.application.routes.draw do
+  # Routes for the Address resource:
+
+  # CREATE
+  match("/new_address_form", { :controller => "addresses", :action => "blank_form", :via => "get" })
+  match("/insert_address_record", { :controller => "addresses", :action => "save_new_info", :via => "post" })
+
+  # READ
+  match("/addresses", { :controller => "addresses", :action => "list", :via => "get" })
+  match("/addresses/:id_to_display", { :controller => "addresses", :action => "details", :via => "get" })
+
+  # UPDATE
+  match("/existing_address_form/:id_to_prefill", { :controller => "addresses", :action => "prefilled_form", :via => "get" })
+  match("/update_address_record/:id_to_modify", { :controller => "addresses", :action => "save_edits", :via => "post" })
+
+  # DELETE
+  match("/delete_address/:id_to_remove", { :controller => "addresses", :action => "remove_row", :via => "get" })
+
+  #------------------------------
+
+  # Routes for the Restaurant resource:
+
+  # CREATE
+  match("/new_restaurant_form", { :controller => "restaurants", :action => "blank_form", :via => "get" })
+  match("/insert_restaurant_record", { :controller => "restaurants", :action => "save_new_info", :via => "post" })
+
+  # READ
+  match("/restaurants", { :controller => "restaurants", :action => "list", :via => "get" })
+  match("/restaurants/:id_to_display", { :controller => "restaurants", :action => "details", :via => "get" })
+
+  # UPDATE
+  match("/existing_restaurant_form/:id_to_prefill", { :controller => "restaurants", :action => "prefilled_form", :via => "get" })
+  match("/update_restaurant_record/:id_to_modify", { :controller => "restaurants", :action => "save_edits", :via => "post" })
+
+  # DELETE
+  match("/delete_restaurant/:id_to_remove", { :controller => "restaurants", :action => "remove_row", :via => "get" })
+
+  #------------------------------
+
   # Routes for the Dish resource:
 
   # CREATE
@@ -7,6 +45,7 @@ Rails.application.routes.draw do
 
   # READ
   match("/dishes", { :controller => "dishes", :action => "list", :via => "get" })
+  match("/", { :controller => "dishes", :action => "list", :via => "get" })
   match("/dishes/:id_to_display", { :controller => "dishes", :action => "details", :via => "get" })
 
   # UPDATE
@@ -34,7 +73,10 @@ Rails.application.routes.draw do
 
   # DELETE
   match("/delete_cuisine/:id_to_remove", { :controller => "cuisines", :action => "remove_row", :via => "get" })
-
+  
+  
+  
+  
   #------------------------------
 
   devise_for :users

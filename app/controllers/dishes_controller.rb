@@ -1,6 +1,7 @@
 class DishesController < ApplicationController
   def list
     @dishes = Dish.all
+    #@restaurant_id = params.fetch("restaurant")
 
     render("dish_templates/list.html.erb")
   end
@@ -13,19 +14,26 @@ class DishesController < ApplicationController
 
   def blank_form
     @dish = Dish.new
+    #@restaurant = Restaurant.new
+    #@dish.photo = params.fetch(:photo)
 
     render("dish_templates/blank_form.html.erb")
   end
 
   def save_new_info
     @dish = Dish.new
+    @restaurant = Restaurant.new
+    @cuisine = Cuisine.new
+    @dish.photo = params.fetch(:photo)
 
     @dish.name = params.fetch("name")
-    @dish.cuisine_id = params.fetch("cuisine_id")
-    @dish.restaurant = params.fetch("restaurant_id")
+    @cuisine.name = params.fetch("cuisine")
+    @restaurant.name = params.fetch("restaurant")
 
     if @dish.valid?
       @dish.save
+      @restaurant.save
+      @cuisine.save
 
       redirect_to("/dishes", { :notice => "Dish created successfully." })
     else
@@ -43,8 +51,9 @@ class DishesController < ApplicationController
     @dish = Dish.where({ :id => params.fetch("id_to_modify") }).first
 
     @dish.name = params.fetch("name")
-    @dish.cuisine_id = params.fetch("cuisine_id")
-    @dish.restaurant = params.fetch("restaurant_id")
+    @dish.cuisine = params.fetch("cuisine")
+    @dish.restaurant = params.fetch("restaurant")
+    @dish.photo = params.fetch(:photo)
 
     if @dish.valid?
       @dish.save

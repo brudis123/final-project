@@ -1,0 +1,50 @@
+<h1>
+  Address list
+</h1>
+
+<a href="/new_address_form">
+  Add a new address
+</a>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @addresses.each do |address| %>
+  <tr>
+    <td>
+      <%= address.id %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(address.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(address.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/addresses/<%= address.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

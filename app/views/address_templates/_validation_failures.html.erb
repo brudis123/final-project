@@ -1,0 +1,7 @@
+<% if @address.errors.any? %>
+  <% @address.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>

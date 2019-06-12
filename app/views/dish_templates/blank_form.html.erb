@@ -6,7 +6,7 @@
 
 <%= render("dish_templates/validation_failures.html.erb") %>
 
-<form action="/insert_dish_record" method="post">
+<form action="/insert_dish_record" method="post" enctype="multipart/form-data">
   <div>
     <label for="name">
       Name
@@ -15,14 +15,28 @@
     <input type="text" id="name" name="name" value="<%= @dish.name %>">
   </div>
 
-  <div>
-    <label for="cuisine_id">
+<div>
+  <label for="cuisine">
       Cuisine
-    </label>
+  </label>
 
-    <input type="text" id="cuisine_id" name="cuisine_id" value="<%= @dish.cuisine_id %>">
-  </div>
 
+<select name="cuisine" id="cuisine_dropdown">
+  <option>American</option>
+  <option>Chinese</option>
+  <option>French</option>
+  <option>Fusion</option>
+  <option>Indian</option>
+  <option>Italian</option>
+  <option>Japanese</option>
+  <option>Mexican</option>
+  <option>Spanish</option>
+  <option>Steak</option>
+  <option>Thai</option>
+  <option>Other</option>
+</select>
+
+</div> 
   <div>
     <label for="restaurant">
       Restaurant
@@ -31,6 +45,12 @@
     <input type="text" id="restaurant" name="restaurant" value="<%= @dish.restaurant %>">
   </div>
   
+<!--<form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">-->
+  <label>Photo</label>   
+  <input type="file" id="photo" name="photo" method="post" class="form-control">
+
+<!--</form>-->
+
   <button>
     Create dish
   </button>

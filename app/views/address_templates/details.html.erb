@@ -1,0 +1,40 @@
+<h1>
+  Address #<%= @address.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/addresses">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_address_form/<%= @address.id %>">
+      Edit address
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_address/<%= @address.id %>">
+      Delete address
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@address.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@address.updated_at) %> ago
+  </dd>
+</dl>
+

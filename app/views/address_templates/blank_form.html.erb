@@ -1,0 +1,19 @@
+<h1>
+  Add a new address
+</h1>
+
+<hr>
+
+<%= render("address_templates/validation_failures.html.erb") %>
+
+<form action="/insert_address_record" method="post">
+  <button>
+    Create address
+  </button>
+</form>
+
+<hr>
+
+<a href="/addresses">
+  Go back
+</a>

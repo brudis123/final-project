@@ -1,0 +1,19 @@
+<h1>
+  Edit address #<%= @address.id %>
+</h1>
+
+<hr>
+
+<%= render("address_templates/validation_failures.html.erb") %>
+
+<form action="/update_address_record/<%= @address.id %>" method="post">
+  <button>
+    Update address
+  </button>
+</form>
+
+<hr>
+
+<a href="/addresses">
+  Go back
+</a>

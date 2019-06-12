@@ -1,13 +1,12 @@
 # == Schema Information
 #
-# Table name: cuisines
+# Table name: addresses
 #
 #  id         :integer          not null, primary key
-#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  name       :string
 #
 
-class Cuisine < ApplicationRecord
-  has_many :dishes, :dependent => :destroy
+class Address < ApplicationRecord
 end

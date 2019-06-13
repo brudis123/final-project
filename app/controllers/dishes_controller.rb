@@ -29,7 +29,7 @@ class DishesController < ApplicationController
 
     @dish.name = params.fetch("name")
     @dish.cuisine_id = params.fetch("cuisine_id")
-    # @dish.restaurant = params.fetch("restaurant")
+    @dish.restaurant_id = params.fetch("restaurant_id")
     # @dish.comment = params.fetch("dish_comment")
     # @restaurant.address = params.fetch("address")
     
@@ -59,9 +59,6 @@ class DishesController < ApplicationController
     @dish = Dish.where({ :id => params.fetch("id_to_modify") }).first
 
     @dish.name = params.fetch("name")
-    @dish.cuisine = params.fetch("cuisine")
-    @dish.restaurant = params.fetch("restaurant")
-    @dish.photo = params.fetch(:photo)
 
     if @dish.valid?
       @dish.save

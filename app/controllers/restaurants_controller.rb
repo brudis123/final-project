@@ -21,7 +21,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
 
     @restaurant.name = params.fetch("name")
-    @restaurant.address = params.fetch("address")
+    # @restaurant.address = params.fetch("address")
 
     if @restaurant.valid?
       @restaurant.save

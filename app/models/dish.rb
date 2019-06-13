@@ -19,4 +19,5 @@ class Dish < ApplicationRecord
   
   belongs_to :restaurant, :class_name => "Restaurant", :foreign_key => "restaurant_id"
   belongs_to :cuisine, :class_name => "Cuisine", :foreign_key => "cuisine_id"
+  has_many :comments, :dependent => :destroy
 end

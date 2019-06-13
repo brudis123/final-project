@@ -34,8 +34,21 @@
     Cuisine
   </dt>
   <dd>
-    <%= @dish.cuisine_id %>
+    <%= @dish.cuisine.name %>
   </dd>
+
+  <dt>
+    Taste Notes
+  </dt>
+  
+<% @dish.comments.each do |comment| %>
+  <tr>
+    <td>
+      <%= comment.body %>
+    </td>
+</tr>
+<% end %>
+
 
   <td>
     <%= @dish.comment_id %>

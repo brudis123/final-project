@@ -1,3 +1,7 @@
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--<button class="btn"><a class="homebar" href="/restaurants"><i class="fa fa-home" ></i> Home</a></button>-->
+
+
 <h1>
   Favorite Dishes
 </h1>
@@ -10,9 +14,6 @@
 
 <table>
   <tr>
-    <th>
-      ID
-    </th>
 
     <th>
       Name
@@ -44,9 +45,6 @@
 
   <% @dishes.each do |dish| %>
   <tr>
-    <td>
-      <%= dish.id %>
-    </td>
 
     <td>
       <%= dish.name %>
@@ -57,16 +55,11 @@
     </td>
 
     <td>
-      <!--<%#= dish.restaurant.name %>-->
+      <%= dish.restaurant.name %>
     </td>
 
-   
     <td>
-      <!--<%#= restaurant.address %>-->
-    </td>
-    
-    <td>
-      <img src="<%= dish.photo %>" class="img-responsive">
+      <img src="<%= dish.photo %>" class="img-responsive" width="60">
     </td>
     
     <td>
